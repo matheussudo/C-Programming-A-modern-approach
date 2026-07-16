@@ -91,16 +91,20 @@ bool repeated_digit(long int n) {
     }
 }
 
-int array_size(int array[]) {
-    int size = sizeof(array) / sizeof(array[0]);
-    return size;
-}
-
 int main() {
     long number;
-
-    int teste[] = {1, 4, 5, 3, 2, 1, 45, 6, 2};
+    int i;
+    int a[] = {1, 4, 5, 3, 2, 1, 45, 6, 2};
     
-    printf("Tamanho do array: %d", array_size(teste));
+
+
+    #define SIZE ((int) (sizeof(a) / sizeof(a[0]))) 
+
+    for (i = 0; i < SIZE; i++) {
+        a[i] = 0;
+    }
+
+
+    
     return 0;
 }

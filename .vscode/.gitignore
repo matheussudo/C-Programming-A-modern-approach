@@ -1,0 +1,6 @@
+# Ignorar todos os arquivos executáveis compilados (sem extensão)
+*
+!*.*
+
+# Ignorar arquivos temporários e de configuração do VS Code
+.vscode/
