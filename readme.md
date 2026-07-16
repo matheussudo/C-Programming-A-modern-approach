@@ -43,7 +43,7 @@ This repository serves as my personal notebook and code portfolio. It contains m
 | 5 | Selection Statements | 🟢 | [Notes](./ch05/) - [Code](./ch05/) |
 | 6 | Loops | 🟢 | [Notes](./ch06/) - [Code](./ch06/) |
 | 7 | Basic Types | 🟢 | [Notes](./ch07/) - [Code](./ch07/) |
-| 8 | Arrays | 🟡 | [Notes](./ch08/) - [Code](./ch08/) |
+| 8 | Arrays | 🟡 | [Notes](./Cap%208%20-%20Arrays/notas.md) - [Code](./Cap%208%20-%20Arrays/) |
 | 9 | Functions | 🟡 | [Notes](./ch09/) - [Code](./ch09/) |
 | 10 | Program Organization | ⚪ | [Notes](./ch10/) - [Code](./ch10/) |
 
@@ -77,6 +77,6 @@ This repository serves as my personal notebook and code portfolio. It contains m
 ---
 
 ## 🛠️ Environment & Tools
-* **OS:** Pop!_OS (Linux)
+* **OS:** EndeavourOS (Linux)
 * **Compiler:** GCC (GNU Compiler Collection)
 * **Editor:** Visual Studio Code
