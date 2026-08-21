@@ -44,13 +44,13 @@ void check_position(int position[2], int round_x[2], int round_y[2], char campo[
     bool sides[4] = {false, false, false, false};
     int lado;
     
-    if (round_y[0] > 0 && campo[position[0]][round_y[0]] == '.') { // conferindo cima
+    if (round_y[0] >= 0 && campo[position[0]][round_y[0]] == '.') { // conferindo cima
         sides[0] = true;
     }
     if (round_y[1] < 10 && round_y[1] > 0 && campo[position[0]][round_y[1]] == '.') { // conferindo baixo
         sides[1] = true;
     }
-    if (round_x[0] > 0 && campo[round_x[0]][position[1]] == '.') { // conferindo esquerda
+    if (round_x[0] >= 0 && campo[round_x[0]][position[1]] == '.') { // conferindo esquerda
         sides[2] = true;
     }
     if (round_x[1] < 10 && round_x[1] > 0 && campo[round_x[1]][position[1]] == '.') { // conferindo direita

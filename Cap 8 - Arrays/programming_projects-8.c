@@ -273,34 +273,63 @@ void project_08() {
     }
 }
 
-void project_09() {
-    /* 
-    * Write a program that generates a "random walk" across a 10 x 10 array. The array will 
-    * contain characters (all '.' initially). The program must randomly "walk" from element to element, 
-    * always going up, down, left, or right by one element. The elements visited by the 
-    * program will be labeled with the letters A through Z, in the order visited.
-    * 
-    * Hint: Use the srand and rand functions to generate random numbers. After generating a number, 
-    * look at its remainder when divided by 4. There are four possible values for the remainder—0, 1, 2, 
-    * and 3—indicating the direction of the next move. Before performing a move, check that 
-    * (a) it won't go outside the array, and (b) it doesn't take us to an element that already has 
-    * a letter assigned. If either condition is violated, try moving in another direction. 
-    * If all four directions are blocked, the program must terminate.
-    */
-
-
-}
-
-void project_09() {
+void project_8_5() {
     limpar_console();
+    int horas[8] = {480, 583, 679, 767, 840, 945, 1140, 1305};
+    int diferencas[8] = {0};
+    int hh = 0, mm = 0, c_hour = 0;
 
-    char campo[10][10] = {'.'};
-    char alfabeto[26] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+    printf("Deperature Time\tArrival time");
+    printf("\n 8:00 am \t10:16 am");
+    printf("\n 9:43 am \t11:52 am");
+    printf("\n11:19 am \t 1:31 am");
+    printf("\n12:47 am \t 3:00 am");
+    printf("\n 2:00 am \t 4:08 am");
+    printf("\n 3:45 am \t 5:55 am");
+    printf("\n 7:00 am \t 9:20 am");
+    printf("\n 9:45 am \t11:58 am");
+
+    printf("\nEnter a 24-hour time: ");
+    scanf("%d:%d", &hh, &mm);
+
+    c_hour = (hh * 60) + mm;
+    printf("Minutos cliente: %d\n", c_hour);
+
+    
+    for (int i = 0; i < 8; i++) {
+        diferencas[i] = abs(c_hour - horas[i]);
+    }
+
+    imprimirArray(horas, 8);
+    imprimirArray(diferencas, 8);
+
+    int menor = diferencas[0];
+    int indice_menor = 0;
+
+    for (int i = 0; i < 8; i++) {
+        if (diferencas[i] < menor) {
+            menor = diferencas[i];
+            indice_menor = i;
+        }
+    }
+
+    
+    printf("\nMenor diferença: %d", diferencas[indice_menor]);
+    int x = horas[indice_menor];
+    int hora_voo = x / 60;
+    int minuto_voo = x % 60;
+    printf("\nHorario mais perto: %.2d:%.2d", hora_voo, minuto_voo);
+
+    
+    // printf("\nMinutos cliente: %d", c_hour);
+    printf("\n");
+
 }
+
 
 int main() {
     
-    project_08();
+    project_11();
     printf("\n");
     return 0;
 }
