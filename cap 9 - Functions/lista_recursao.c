@@ -43,39 +43,88 @@ int tribonacci(int n) {
 
 }
 
-void merge_sort(int t1, int c1[t1], int t2, int c2[t2], int t3, int c3[t3]) {
+void ordenar(int t1, int c1[t1], int t2, int c2[t2], int t3, int c3[t3]) {
     int i = 0;
     int j = 0;
-    int m = 0;
-
+    int p = 0;
     int pilha_ordenada[6];
-    for (int o = 0; 0 < 6; o++) {
+    while (i < 3 && j < 3) {
         if (c1[i] > c2[j]){
-            c3[m] =  c2[j];
+            c3[p] =  c2[j];
+            printf("\nP[%d] = %d \ti - %d \tj - %d", p, c3[p], i, j);
+            p++;
             j++;
         } else {
-            o++;
-            c3[o] = c1[i];
+            c3[p] = c1[i];
+            printf("\nP[%d] = %d \ti - %d \tj - %d", p, c3[p], i, j);
+            p++;
+            i++;
         }
-        
+    }
+    while (i < 3) {
+        c3[p++] = c1[i++];
+    }
+    while (j < 3) {
+        c3[p++] = c2[j++];
     }
 }
 
-1
+void intercalar(int arr[], int inicio, int meio, int fim) {
+    int tam_esq = meio - inicio + 1;
+    int tam_dir = fim - meio;
+
+    int esq[tam_esq];
+    int dir[tam_dir];
+
+    for (int i = 0; i < tam_esq; i++) {
+        esq[i] = arr[inicio + i];
+    }
+
+    for (int j = 0; j < tam_dir; j++) {
+        dir[j] = arr[meio + 1 + j]; 
+    }
+
+    int i = 0;
+    int j = 0;
+    int k = inicio;
+
+    while (i < tam_esq && j < tam_dir) {
+        if (esq[i] > dir[j]){
+            arr[k++] =  dir[j++];
+        } else {
+            arr[k++] = esq[i++];
+        }
+    }
+
+    while (i < tam_esq) {
+        arr[k++] = esq[i++];
+    }
+    while (j < tam_dir) {
+        arr[k++] = dir[j++];
+    }
+}
+
+void merge_sort(int arr[], int inicio, int fim) {
+    if (inicio == fim) {
+        return
+    }
+
+
+    if (inicio < fim) {
+        meio = inicio + (fim - inicio) / 2;
+    }
+}
+
+merge_sort(arr, inicio, fim)
+ └── if (inicio < fim)
+      ├── 1. Calcula meio
+      ├── 2. merge_sort(arr, inicio, meio)      <-- Divide esquerda
+      ├── 3. merge_sort(arr, meio + 1, fim)      <-- Divide direita
+      └── 4. intercalar(arr, inicio, meio, fim)  <-- Junta tudo ordenado1
+
 
 int main() {
     limpar_console();
-    int c1[3] = {2, 5, 9};
-    int c2[3] = {1, 6, 8};
-    int pilha_ordenada[6];
-
-    printf("C1: ");
-    imprimirArray(c1, 3);
-    printf("C2: ");
-    imprimirArray(c2, 3);
-
-    merge_sort1(3, c1, 3, c2, 6, pilha_ordenada);
-
-    printf("Pilha ordenada: ");
-    imprimirArray(pilha_ordenada, 6);
+    int arr[6] = {1, 4, 5, 6, 7, 8};
+    imprimirArray(arr, 6);
 }
